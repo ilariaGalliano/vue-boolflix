@@ -10,14 +10,17 @@ const app = new Vue({
     search: '',
   },
   methods: {
+
     searchBtn() {
       this.getMovie();
       this.getSerie();
+      // To clean input
       this.search = '';
     },
 
+    // Function to get a movie
     getMovie() {
-      if (this.search) {
+      if (this.search.trim()) {
 
         axios.get('http://api.themoviedb.org/3/search/movie', {
             params: {
@@ -33,8 +36,10 @@ const app = new Vue({
         .catch(error => {
           console.log('error', error);
         })
-      }
+      };
     },
+
+    // Function to get a movie
     getSerie(){
       if (this.search) {
 
@@ -53,7 +58,19 @@ const app = new Vue({
           console.log('error', error);
         })
       }
-    }
-  }
+    },
 
+    // Use stars to vote
+    voteStars(vote) {
+     return Math.ceil(vote / 2);
+   },
+
+    // Filter movies and series by keyup
+    searchFiltered(){
+     if ( this.search.length > 2 ) {
+            this.getMovie()
+            this.getSerie()
+     }
+   },
+  }
 });
