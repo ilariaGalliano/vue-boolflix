@@ -72,5 +72,13 @@ const app = new Vue({
             this.getSerie()
      }
    },
+
+   // To reset my search
+   resetSearch(){
+     this.movies = [];
+     this.series = [];
+     // To clean input
+     this.search = '';
+   }
   }
 });

@@ -21,7 +21,7 @@
     <!-- Search section -->
     <div class="search">
       <div class="ilaflix">
-        <img src="./img/ilaflix.png" alt="">
+        <img @click="resetSearch" src="./img/ilaflix.png" alt="">
       </div>
       <nav class="btn-input">
         <input
@@ -35,70 +35,72 @@
       </nav>
 
     </div>
-    <!-- Movie section -->
-    <div class="movies">
-        <ul class="output-movie-tv dsp-flex">
-          <li v-for="movie in movies">
-             <img v-if="movie.poster_path != 'null'"
-                  :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`"
-                  :alt="movie.poster_path"
-                  class="poster-pd"
-             >
-             <img v-else
-                  src="https://www.altavod.com/assets/images/poster-placeholder.png"
-                  :alt="movie.poster_path"
-                  class="no-poster poster-pd"
-              >
-             <h2 class="title">{{ movie.title }}</h2>
-             <h3 class="original-title">{{ movie.original_title }}</h3>
-             <div class="votes-stars">
-                <i class="fas fa-star"
-                  v-for="n in voteStars(movie.vote_average)"></i>
-                <i class="far fa-star"
-                  v-for="n in (5 - voteStars(movie.vote_average))"></i>
-              </div>
-             <span class="language">
-               <img class="flag"
-                  :src="`./img/${movie.original_language}.png`"
-                  :alt="movie.original_language">
-             </span>
-          </li>
-        </ul>
-    </div>
-
-    <!-- Series section -->
-    <div class="series">
-        <ul class="output-series-tv dsp-flex">
-          <li v-for="serie in series">
-             <img v-if="serie.poster_path"
-                  :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`"
-                  :alt="serie.poster_path"
-                  class="poster-pd"
-             >
-             <img v-else
-                  src="https://www.altavod.com/assets/images/poster-placeholder.png"
-                  :alt="serie.poster_path"
-                  class="no-poster poster-pd"
-             >
-             <h2 class="title">{{ serie.name }}</h2>
-             <h3 class="original-title">{{ serie.original_name }}</h3>
-             <div class="votes-stars">
-                <i class="fas fa-star"
-                   v-for="n in voteStars(serie.vote_average)"></i>
-                <i class="far fa-star"
-                   v-for="n in (5 - voteStars(serie.vote_average))"></i>
-             </div>
-             <span class="language">
-               <img class="flag"
-                    :src="`./img/${serie.original_language}.png`"
-                    :alt="serie.original_language"
+     <!-- Scrollable -->
+      <div class="scrollable">
+        <!-- Movie section -->
+        <div class="movies">
+          <ul class="output-movie-tv dsp-flex">
+            <li v-for="movie in movies">
+               <img v-if="movie.poster_path"
+                    :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`"
+                    :alt="movie.poster_path"
+                    class="poster-pd"
                >
+               <img v-else
+                    src="https://www.altavod.com/assets/images/poster-placeholder.png"
+                    :alt="movie.poster_path"
+                    class="no-poster poster-pd"
+                >
+               <h2 class="title">{{ movie.title }}</h2>
+               <h3 class="original-title">{{ movie.original_title }}</h3>
+               <div class="votes-stars">
+                  <i class="fas fa-star"
+                     v-for="n in voteStars(movie.vote_average)"></i>
+                  <i class="far fa-star"
+                     v-for="n in (5 - voteStars(movie.vote_average))"></i>
+              </div>
+              <span class="language">
+                 <img class="flag"
+                    :src="`./img/${movie.original_language}.png`"
+                    :alt="movie.original_language">
              </span>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Series section -->
+        <div class="series">
+          <ul class="output-series-tv dsp-flex">
+            <li v-for="serie in series">
+               <img v-if="serie.poster_path"
+                    :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`"
+                    :alt="serie.poster_path"
+                    class="poster-pd"
+               >
+               <img v-else
+                    src="https://www.altavod.com/assets/images/poster-placeholder.png"
+                    :alt="serie.poster_path"
+                    class="no-poster poster-pd"
+               >
+               <h2 class="title">{{ serie.name }}</h2>
+               <h3 class="original-title">{{ serie.original_name }}</h3>
+               <div class="votes-stars">
+                  <i class="fas fa-star"
+                     v-for="n in voteStars(serie.vote_average)"></i>
+                  <i class="far fa-star"
+                     v-for="n in (5 - voteStars(serie.vote_average))"></i>
+               </div>
+               <span class="language">
+                 <img class="flag"
+                      :src="`./img/${serie.original_language}.png`"
+                      :alt="serie.original_language"
+                 >
+               </span>
+            </li>
+          </ul>
+        </div>
+
     </div>
-
-
   </div>
 
 
