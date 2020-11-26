@@ -39,11 +39,11 @@ const app = new Vue({
       };
     },
 
-    // Function to get a movie
+    // Function to get a serie
     getSerie(){
       if (this.search) {
 
-        axios.get('http://api.themoviedb.org/3/search/movie', {
+        axios.get('http://api.themoviedb.org/3/search/tv', {
             params: {
               api_key: '3c67c4d06b5f783fc1b76e71b63a58a7',
               language: 'it-IT',

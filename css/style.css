@@ -8,23 +8,109 @@
 /* Layout */
 body {
   font-family: 'Lato', sans-serif;
+  color: #fff;
+  background: #192d3c;
 }
 img{
-  max-width: 100px;
-  margin: 20px 0;
-}
-/* Section input */
-.search{
-  margin: 20px;
+  max-width: 100%;
+  padding: 20px;
 }
 
-/* Main */
-.output-movie-tv,
-.output-series-tv{
-  margin: 20px;
+/* Search section */
+.search{
+  background: #2b3a47;
+  display: flex;
 }
+.search .ilaflix{
+ flex-basis: 40%;
+ margin-left: 20px;
+}
+.btn-input{
+  flex-basis: 60%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin-top: 24px;
+}
+.search .btn-input input{
+  width: 400px;
+  height: 40px;
+  line-height: 1.5;
+  background: #192d3c;
+  color: #586d71;
+  border: 0;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 20px;
+  margin-right: 20px;
+  box-shadow: 0 15px 10px -10px rgba(0,0,0, .4);
+  outline: none;
+  transition: background .4s;
+  cursor: pointer;
+}
+.search .btn-input button{
+  font-size: 16px;
+  width: 90px;
+  height: 42px;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0 15px 10px -10px rgba(0,0,0, .4);
+  vertical-align: middle;
+  margin-top: 20px;
+  color: #586d71;
+  margin-right: 20px;
+  background: #192d3c;
+  border: 0;
+  transition: background .4s;
+  cursor: pointer;
+}
+/* Search section on hover */
+.search .btn-input input:hover,
+.search .btn-input button:hover{
+  background: #fff;
+  color: #000000;
+}
+
+/* Utility */
+.dsp-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.title{
+  font-size: 26px
+}
+.original-title{
+  margin: 20px 0;
+  font-size: 22px
+}
+.language{
+  margin: 10px 8px;
+  font-size: 18px
+}
+/* Main general movies and series */
 .output-movie-tv li,
 .output-series-tv li{
+  flex-basis: 350px;
+  height: 760px;
   list-style: none;
+  background: #2b3a47;
+  margin: 60px 20px 10px;
   padding: 10px;
+  text-align: center;
+}
+.no-poster{
+  width: 342px;
+}
+.votes-stars{
+  font-size: 18px;
+  margin: 30px 0;
+}
+
+/* Languages main */
+.series .flag ,
+.movies .flag{
+  width: 80px;
+  padding: 0;
 }
