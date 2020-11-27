@@ -8,6 +8,8 @@ const app = new Vue({
     movies: [],
     series: [],
     search: '',
+    moviesVisibility: true,
+    seriesVisibility: true,
   },
   methods: {
 
@@ -71,14 +73,33 @@ const app = new Vue({
             this.getMovie()
             this.getSerie()
      }
-   },
+    },
 
-   // To reset my search
-   resetSearch(){
+    // To reset my search
+    resetSearch(){
      this.movies = [];
      this.series = [];
      // To clean input
      this.search = '';
-   }
+   },
+
+   // To show just the movies
+   showMovies() {
+      this.moviesVisibility = true
+      this.seriesVisibility = false
+       },
+
+    // To show just the series
+    showSeries() {
+      this.moviesVisibility = false
+      this.seriesVisibility = true
+    },
+    
+    // To show movies and series
+    showAll() {
+      this.moviesVisibility = true
+      this.seriesVisibility = true
+    },
+
   }
 });

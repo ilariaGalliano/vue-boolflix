@@ -54,7 +54,7 @@ img{
   transition: background .4s;
   cursor: pointer;
 }
-.search .btn-input button{
+.btn{
   font-size: 16px;
   width: 90px;
   height: 42px;
@@ -70,14 +70,23 @@ img{
   transition: background .4s;
   cursor: pointer;
 }
+.search-genre{
+  margin-top: 40px;
+}
+.search-genre .btn{
+  width: 110px;
+  height: 52px;
+  background: #101b26;
+}
+
 /* Search section on hover */
 .search .btn-input input:hover,
-.search .btn-input button:hover{
+.btn:hover{
   background: #fff;
   color: #000000;
 }
 
-/* Utility */
+/* Utilities */
 .dsp-flex{
   display: flex;
   justify-content: center;
@@ -104,14 +113,33 @@ img{
   margin: 10px 8px;
   font-size: 18px
 }
+.none-overview{
+  position: absolute;
+  width: 340px;
+  height: 740px;
+  padding: 10px;
+  background: rgba(0, 0, 0, .8);
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0;
+}
+.none-overview:hover{
+  opacity: 1;
+}
+
 /* Main general movies and series */
+.output-movie-tv,
+.output-series-tv{
+  position: relative;
+}
 .output-movie-tv li,
 .output-series-tv li{
   flex-basis: 350px;
   height: 760px;
   list-style: none;
   background: #2b3a47;
-  margin: 60px 20px 10px;
+  margin: 150px 20px 10px;
   padding: 10px;
   text-align: center;
   cursor: pointer;
@@ -123,6 +151,7 @@ img{
   font-size: 18px;
   margin: 30px 0;
 }
+
 /* Main general movies and series on hover */
 .output-movie-tv li:hover,
 .output-series-tv li:hover{

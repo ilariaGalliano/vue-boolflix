@@ -31,16 +31,25 @@
         @keyup.enter="searchBtn"
         placeholder="Search movies and series"
         >
-        <button @click="searchBtn" > Search </button>
+        <button class="btn" @click="searchBtn" > Search </button>
       </nav>
 
     </div>
      <!-- Scrollable -->
       <div class="scrollable">
+        <!-- Search for genre -->
+        <div class="search-genre dsp-flex">
+            <button @click="showAll" class="btn"> All </button>
+            <button @click="showMovies" class="btn"> Movie </button>
+            <button @click="showSeries" class="btn"> Serie TV </button>
+        </div>
         <!-- Movie section -->
         <div class="movies">
           <ul class="output-movie-tv dsp-flex">
             <li v-for="movie in movies">
+              <p v-if="movie.overview" class="none-overview dsp-flex">
+                  {{movie.overview}}
+               </p>
                <img v-if="movie.poster_path"
                     :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`"
                     :alt="movie.poster_path"
@@ -72,6 +81,9 @@
         <div class="series">
           <ul class="output-series-tv dsp-flex">
             <li v-for="serie in series">
+              <p v-if="serie.overview" class="none-overview dsp-flex">
+                 {{serie.overview}}
+              </p>
                <img v-if="serie.poster_path"
                     :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`"
                     :alt="serie.poster_path"
