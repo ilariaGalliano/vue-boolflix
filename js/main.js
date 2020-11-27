@@ -34,7 +34,6 @@ const app = new Vue({
         .then( response => {
           this.movies = response.data.results;
         })
-
         .catch(error => {
           console.log('error', error);
         })
@@ -55,7 +54,6 @@ const app = new Vue({
         .then( response => {
           this.series = response.data.results;
         })
-
         .catch(error => {
           console.log('error', error);
         })
@@ -65,7 +63,7 @@ const app = new Vue({
     // Use stars to vote
     voteStars(vote) {
      return Math.ceil(vote / 2);
-   },
+    },
 
     // Filter movies and series by keyup
     searchFiltered(){
@@ -81,25 +79,24 @@ const app = new Vue({
      this.series = [];
      // To clean input
      this.search = '';
-   },
+    },
 
    // To show just the movies
-   showMovies() {
+    showMovies() {
       this.moviesVisibility = true
       this.seriesVisibility = false
-       },
+    },
 
     // To show just the series
     showSeries() {
       this.moviesVisibility = false
       this.seriesVisibility = true
     },
-    
+
     // To show movies and series
     showAll() {
       this.moviesVisibility = true
       this.seriesVisibility = true
     },
-
   }
 });
